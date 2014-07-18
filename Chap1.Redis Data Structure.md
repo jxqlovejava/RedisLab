@@ -57,5 +57,5 @@ Redis List的底层实现是一个双链表，这样不但支持正向查找和�
 { order_id: "1001", order_code: "a01", msg_expired_at: "2014-07-19 11:30:00"}
 那么重复处理就重复处理好了，因为订单表肯定有一个订单状态字段，重复处理时会发现订单已处理完成，则直接丢弃消息并删除备用List中的该订单消息，并不会带来什么副作用。
 
-此处关于rpoplpush参考了<a href="http://www.cnblogs.com/stephen-liu74/archive/2012/02/14/2351859.html" target="_blank">这篇博客</a>的末尾部分，不过后面关于重复消息处理的问题和解决方案是我自己想到的，😄
+此处关于rpoplpush参考了<a href="http://www.cnblogs.com/stephen-liu74/archive/2012/02/14/2351859.html" target="_blank">这篇博客</a>的末尾部分，不过后面关于重复消息处理的问题和解决方案是我自己想到的，O(∩_∩)O
 
