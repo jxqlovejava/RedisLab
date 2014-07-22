@@ -61,7 +61,7 @@ Redis List的底层实现是一个双链表，这样不但支持正向查找和�
 ### 1.1、简单介绍
 Hash既可以是名词，也可以是动词。作为名词，它是一种常见的数据结构，作为动词，它是哈希函数运算的意思。Redis Hash是一种很方便的数据结构，它的Key和Redis List没啥区别，但Value却是一个哈希结构。比如用Redis Hash存储用户信息：
 
-![Redis Hash Demo](/Users/jiangxiaoqiang/Desktop/Hash.jpeg)
+![Redis Hash Demo](./imgs/Chap1.Hash.jpeg)
 
 
 可以看到Hash包含两部分：field和value。Redis Hash支持的操作包括HGET、HSET、HMGET、HMSET、HEXISTS、HGETALL、HLEN、HDEL、HVALS。完整命令列表查看<a href="http://www.redis.cn/commands.html#hash" target="_blank">Redis Hash</a>
@@ -89,7 +89,7 @@ Redis Hash的应用的最好例子就是我们都平时都很熟悉的微博了�
 * 他的粉丝还关注谁
 
 微博按三个维度进行Redis Hash，一个用户关注维度、一个用户的粉丝维度、一个双向关注维度。下图示意了前两种：
-![Redis Hash Demo](/Users/jiangxiaoqiang/Desktop/4-1.png)
+![Redis Hash in Weibo Relation](./imgs/Chap1.Weibo_Relation.png)
 
 左边表示用户关注，Key是[UID].att，Value的field是[UID]关注的用户，Value的value是关注时间，它可以用来在应用服务层进行根据关注时间对关注列表进行排序。
 
